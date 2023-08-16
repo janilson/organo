@@ -4,7 +4,7 @@ import Formulario from "./componentes/Formulario";
 import Rodape from "./componentes/Rodape";
 import Time from "./componentes/Time";
 
-function App() {
+const App = () => {
 
   const times = [
     {
@@ -189,22 +189,38 @@ function App() {
       imagem: 'https://www.alura.com.br/assets/img/lideres/paulo-silveira.1647533644.jpeg',
       time: times[5].nome
     },
-  ]
+  ];
 
-  const [colaboradores, setColaboradores] = useState(inicial)
+  const [colaboradores, setColaboradores] = useState(inicial);
 
+  const deletarColaborador = () => {
+      console.log('teste');
+  };
 
   return (
     <div>
       <Banner />
-      <Formulario times={times.map(time => time.nome)} aoCadastrar={colaborador => setColaboradores([...colaboradores, colaborador])} />
+      <Formulario 
+          times={times.map(time => time.nome)} 
+          aoCadastrar={colaborador => setColaboradores([...colaboradores, colaborador])} 
+      />
+      
       <section className="times">
         <h1>Minha organização</h1>
-        {times.map((time, indice) => <Time key={indice} time={time} colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)} />)}
+        {times.map((time, indice) => {
+            return (
+              <Time 
+                  key={indice} 
+                  time={time} 
+                  colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)} 
+                  aoDeletar={deletarColaborador}
+              />
+          )
+        })}
       </section>
       <Rodape />
     </div>
   );
-}
+};
 
 export default App;
