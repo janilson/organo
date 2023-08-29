@@ -1,7 +1,8 @@
-export default interface ColaboradorType {
-    id: number;
+export default interface IColaborador {
+    id: string;
     nome: string;
     cargo: string;
     imagem: string;
     favorito: boolean;
+    time?: string;
 }

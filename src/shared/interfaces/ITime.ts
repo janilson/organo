@@ -1,9 +1,9 @@
-export default interface TimeType {
-  id: number;
-  favorito: boolean;
+export default interface ITime {
+  id: string;
   nome: string;
-  cargo: string;
-  imagem: string;
   cor: string;
-  time: string;
+  favorito?: boolean;
+  cargo?: string;
+  imagem?: string;
+  time?: string;
 }

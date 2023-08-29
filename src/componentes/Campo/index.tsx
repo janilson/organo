@@ -5,8 +5,8 @@ interface CampoProps {
   aoAlterado: (valor: string) => void;
   placeholder: string;
   label: string;
-  valor: string;
-  obrigatorio: boolean;
+  valor?: string;
+  obrigatorio?: boolean;
   type?: string;
 }
 
