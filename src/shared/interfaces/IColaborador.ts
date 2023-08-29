@@ -5,4 +5,5 @@ export default interface IColaborador {
     imagem: string;
     favorito: boolean;
     time?: string;
+    data?: string;
 }
